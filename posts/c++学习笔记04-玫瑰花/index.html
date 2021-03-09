@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>C&#43;&#43;学习笔记04-玫瑰花 // 何磊</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://hele8.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43;学习笔记04-玫瑰花"/>
+<meta name="twitter:description" content="代码
+/****************************************************** * EasyX Library for C&#43;&#43; (Ver:20200902) * https://easyx.cn * * graphics.h *	Based on easyx.h and retaining several old API. ******************************************************/ #pragma once  #include &lt;easyx.h&gt; // 兼容 initgraph 绘图模式的宏定义（无实际意义） #define DETECT	0 #define VGA	0 #define	VGALO	0 #define VGAMED	0 #define VGAHI	0 #define CGA	0 #define	CGAC0	0 #define	CGAC1	0 #define CGAC2	0 #define CGAC3	0 #define CGAHI	0 #define EGA	0 #define EGALO	0 #define	EGAHI	0  // 绘图窗口初始化参数（已废弃，请使用新的宏定义） #define SHOWCONSOLE	1	// 创建图形窗口时，保留控制台的显示 #define NOCLOSE	2	// 没有关闭功能 #define NOMINIMIZE	4	// 没有最小化功能  // BGI 格式的初始化图形设备，默认 640 x 480 HWND initgraph(int* gdriver, int* gmode, char* path); void bar(int left, int top, int right, int bottom);	// 画无边框填充矩形 void bar3d(int left, int top, int right, int bottom, int depth, bool topflag);	// 画有边框三维填充矩形  void drawpoly(int numpoints, const int *polypoints);	// 画多边形 void fillpoly(int numpoints, const int *polypoints);	// 画填充的多边形  int getmaxx();	// 获取最大的宽度值 int getmaxy();	// 获取最大的高度值  COLORREF getcolor();	// 获取当前绘图前景色 void setcolor(COLORREF color);	// 设置当前绘图前景色  void setwritemode(int mode);	// 设置前景的二元光栅操作模式  /////////////////////////////////////////////////////////////////////////////////// // 以下函数仅为兼容早期 EasyX 的接口，不建议使用。请使用相关新函数替换。 //  #if _MSC_VER &gt; 1200 	#define _EASYX_DEPRECATE(_NewFunc) __declspec(deprecated(&#34;This function is deprecated."/>
+
+    <meta property="og:title" content="C&#43;&#43;学习笔记04-玫瑰花" />
+<meta property="og:description" content="代码
+/****************************************************** * EasyX Library for C&#43;&#43; (Ver:20200902) * https://easyx.cn * * graphics.h *	Based on easyx.h and retaining several old API. ******************************************************/ #pragma once  #include &lt;easyx.h&gt; // 兼容 initgraph 绘图模式的宏定义（无实际意义） #define DETECT	0 #define VGA	0 #define	VGALO	0 #define VGAMED	0 #define VGAHI	0 #define CGA	0 #define	CGAC0	0 #define	CGAC1	0 #define CGAC2	0 #define CGAC3	0 #define CGAHI	0 #define EGA	0 #define EGALO	0 #define	EGAHI	0  // 绘图窗口初始化参数（已废弃，请使用新的宏定义） #define SHOWCONSOLE	1	// 创建图形窗口时，保留控制台的显示 #define NOCLOSE	2	// 没有关闭功能 #define NOMINIMIZE	4	// 没有最小化功能  // BGI 格式的初始化图形设备，默认 640 x 480 HWND initgraph(int* gdriver, int* gmode, char* path); void bar(int left, int top, int right, int bottom);	// 画无边框填充矩形 void bar3d(int left, int top, int right, int bottom, int depth, bool topflag);	// 画有边框三维填充矩形  void drawpoly(int numpoints, const int *polypoints);	// 画多边形 void fillpoly(int numpoints, const int *polypoints);	// 画填充的多边形  int getmaxx();	// 获取最大的宽度值 int getmaxy();	// 获取最大的高度值  COLORREF getcolor();	// 获取当前绘图前景色 void setcolor(COLORREF color);	// 设置当前绘图前景色  void setwritemode(int mode);	// 设置前景的二元光栅操作模式  /////////////////////////////////////////////////////////////////////////////////// // 以下函数仅为兼容早期 EasyX 的接口，不建议使用。请使用相关新函数替换。 //  #if _MSC_VER &gt; 1200 	#define _EASYX_DEPRECATE(_NewFunc) __declspec(deprecated(&#34;This function is deprecated." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004-%E7%8E%AB%E7%91%B0%E8%8A%B1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-05-04T21:21:11&#43;08:00" />
+<meta property="article:modified_time" content="2020-05-04T21:21:11&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://hele8.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>何磊</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">个人主页</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/about/">关于自己</a>
+      </nav>
+      <p>一个努力学习的非专业程序猿~</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/hele8" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">C&#43;&#43;学习笔记04-玫瑰花</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 4, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/******************************************************
+</span><span style="color:#75715e"> * EasyX Library for C++ (Ver:20200902)
+</span><span style="color:#75715e"> * https://easyx.cn
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * graphics.h
+</span><span style="color:#75715e"> *		Based on easyx.h and retaining several old API.
+</span><span style="color:#75715e"> ******************************************************/</span>
+
+<span style="color:#75715e">#pragma once
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;easyx.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 兼容 initgraph 绘图模式的宏定义（无实际意义）
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define DETECT	0
+</span><span style="color:#75715e">#define VGA		0
+</span><span style="color:#75715e">#define	VGALO	0
+</span><span style="color:#75715e">#define VGAMED	0
+</span><span style="color:#75715e">#define VGAHI	0
+</span><span style="color:#75715e">#define CGA		0
+</span><span style="color:#75715e">#define	CGAC0	0
+</span><span style="color:#75715e">#define	CGAC1	0
+</span><span style="color:#75715e">#define CGAC2	0
+</span><span style="color:#75715e">#define CGAC3	0
+</span><span style="color:#75715e">#define CGAHI	0
+</span><span style="color:#75715e">#define EGA		0
+</span><span style="color:#75715e">#define EGALO	0
+</span><span style="color:#75715e">#define	EGAHI	0
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 绘图窗口初始化参数（已废弃，请使用新的宏定义）
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define SHOWCONSOLE		1		</span><span style="color:#75715e">// 创建图形窗口时，保留控制台的显示
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define NOCLOSE			2		</span><span style="color:#75715e">// 没有关闭功能
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define NOMINIMIZE		4		</span><span style="color:#75715e">// 没有最小化功能
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// BGI 格式的初始化图形设备，默认 640 x 480
+</span><span style="color:#75715e"></span>HWND <span style="color:#a6e22e">initgraph</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> gdriver, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> gmode, <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> path);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bar</span>(<span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> top, <span style="color:#66d9ef">int</span> right, <span style="color:#66d9ef">int</span> bottom);		<span style="color:#75715e">// 画无边框填充矩形
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bar3d</span>(<span style="color:#66d9ef">int</span> left, <span style="color:#66d9ef">int</span> top, <span style="color:#66d9ef">int</span> right, <span style="color:#66d9ef">int</span> bottom, <span style="color:#66d9ef">int</span> depth, <span style="color:#66d9ef">bool</span> topflag);	<span style="color:#75715e">// 画有边框三维填充矩形
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">drawpoly</span>(<span style="color:#66d9ef">int</span> numpoints, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>polypoints);	<span style="color:#75715e">// 画多边形
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fillpoly</span>(<span style="color:#66d9ef">int</span> numpoints, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>polypoints);	<span style="color:#75715e">// 画填充的多边形
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getmaxx</span>();					<span style="color:#75715e">// 获取最大的宽度值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getmaxy</span>();					<span style="color:#75715e">// 获取最大的高度值
+</span><span style="color:#75715e"></span>
+COLORREF <span style="color:#a6e22e">getcolor</span>();			<span style="color:#75715e">// 获取当前绘图前景色
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setcolor</span>(COLORREF color);	<span style="color:#75715e">// 设置当前绘图前景色
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setwritemode</span>(<span style="color:#66d9ef">int</span> mode);	<span style="color:#75715e">// 设置前景的二元光栅操作模式
+</span><span style="color:#75715e"></span>
+
+
+
+<span style="color:#75715e">///////////////////////////////////////////////////////////////////////////////////
+</span><span style="color:#75715e">// 以下函数仅为兼容早期 EasyX 的接口，不建议使用。请使用相关新函数替换。
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#if _MSC_VER &gt; 1200
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">#define _EASYX_DEPRECATE(_NewFunc) __declspec(deprecated(&#34;This function is deprecated. Instead, use this new function: &#34; #_NewFunc &#34;. See https:</span><span style="color:#75715e">//docs.easyx.cn/#&#34; #_NewFunc &#34; for details.&#34;))
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">#define _EASYX_DEPRECATE_OVERLOAD(_Func) __declspec(deprecated(&#34;This overload is deprecated. See https:</span><span style="color:#75715e">//docs.easyx.cn/#&#34; #_Func &#34; for details.&#34;))
+</span><span style="color:#75715e"></span><span style="color:#75715e">#else
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">#define _EASYX_DEPRECATE(_NewFunc)
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">#define _EASYX_DEPRECATE_OVERLOAD(_Func)
+</span><span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 设置当前字体样式(该函数已不再使用，请使用 settextstyle 代替)
+</span><span style="color:#75715e">//		nHeight: 字符的平均高度；
+</span><span style="color:#75715e">//		nWidth: 字符的平均宽度(0 表示自适应)；
+</span><span style="color:#75715e">//		lpszFace: 字体名称；
+</span><span style="color:#75715e">//		nEscapement: 字符串的书写角度(单位 0.1 度)；
+</span><span style="color:#75715e">//		nOrientation: 每个字符的书写角度(单位 0.1 度)；
+</span><span style="color:#75715e">//		nWeight: 字符的笔画粗细(0 表示默认粗细)；
+</span><span style="color:#75715e">//		bItalic: 是否斜体；
+</span><span style="color:#75715e">//		bUnderline: 是否下划线；
+</span><span style="color:#75715e">//		bStrikeOut: 是否删除线；
+</span><span style="color:#75715e">//		fbCharSet: 指定字符集；
+</span><span style="color:#75715e">//		fbOutPrecision: 指定文字的输出精度；
+</span><span style="color:#75715e">//		fbClipPrecision: 指定文字的剪辑精度；
+</span><span style="color:#75715e">//		fbQuality: 指定文字的输出质量；
+</span><span style="color:#75715e">//		fbPitchAndFamily: 指定以常规方式描述字体的字体系列。
+</span><span style="color:#75715e"></span>_EASYX_DEPRECATE(settextstyle) <span style="color:#66d9ef">void</span> setfont(<span style="color:#66d9ef">int</span> nHeight, <span style="color:#66d9ef">int</span> nWidth, LPCTSTR lpszFace);
+_EASYX_DEPRECATE(settextstyle) <span style="color:#66d9ef">void</span> setfont(<span style="color:#66d9ef">int</span> nHeight, <span style="color:#66d9ef">int</span> nWidth, LPCTSTR lpszFace, <span style="color:#66d9ef">int</span> nEscapement, <span style="color:#66d9ef">int</span> nOrientation, <span style="color:#66d9ef">int</span> nWeight, <span style="color:#66d9ef">bool</span> bItalic, <span style="color:#66d9ef">bool</span> bUnderline, <span style="color:#66d9ef">bool</span> bStrikeOut);
+_EASYX_DEPRECATE(settextstyle) <span style="color:#66d9ef">void</span> setfont(<span style="color:#66d9ef">int</span> nHeight, <span style="color:#66d9ef">int</span> nWidth, LPCTSTR lpszFace, <span style="color:#66d9ef">int</span> nEscapement, <span style="color:#66d9ef">int</span> nOrientation, <span style="color:#66d9ef">int</span> nWeight, <span style="color:#66d9ef">bool</span> bItalic, <span style="color:#66d9ef">bool</span> bUnderline, <span style="color:#66d9ef">bool</span> bStrikeOut, BYTE fbCharSet, BYTE fbOutPrecision, BYTE fbClipPrecision, BYTE fbQuality, BYTE fbPitchAndFamily);
+_EASYX_DEPRECATE(settextstyle) <span style="color:#66d9ef">void</span> setfont(<span style="color:#66d9ef">const</span> LOGFONT <span style="color:#f92672">*</span>font);	<span style="color:#75715e">// 设置当前字体样式
+</span><span style="color:#75715e"></span>_EASYX_DEPRECATE(gettextstyle) <span style="color:#66d9ef">void</span> getfont(LOGFONT <span style="color:#f92672">*</span>font);			<span style="color:#75715e">// 获取当前字体样式
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 以下填充样式不再使用，新的填充样式请参见帮助文件
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define	NULL_FILL			BS_NULL
+</span><span style="color:#75715e">#define	EMPTY_FILL			BS_NULL
+</span><span style="color:#75715e">#define	SOLID_FILL			BS_SOLID
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 普通一组
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define	BDIAGONAL_FILL		BS_HATCHED, HS_BDIAGONAL					</span><span style="color:#75715e">// /// 填充 (对应 BGI 的 LTSLASH_FILL)
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define CROSS_FILL			BS_HATCHED, HS_CROSS						</span><span style="color:#75715e">// +++ 填充
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define DIAGCROSS_FILL		BS_HATCHED, HS_DIAGCROSS					</span><span style="color:#75715e">// xxx 填充 (heavy cross hatch fill) (对应 BGI 的 XHTACH_FILL)
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define DOT_FILL			(BYTE*)&#34;\x80\x00\x08\x00\x80\x00\x08\x00&#34;	</span><span style="color:#75715e">// xxx 填充 (对应 BGI 的 WIDE_DOT_FILL)	
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define FDIAGONAL_FILL		BS_HATCHED, HS_FDIAGONAL					</span><span style="color:#75715e">// \\\ 填充
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define HORIZONTAL_FILL		BS_HATCHED, HS_HORIZONTAL					</span><span style="color:#75715e">// === 填充
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define VERTICAL_FILL		BS_HATCHED, HS_VERTICAL						</span><span style="color:#75715e">// ||| 填充
+</span><span style="color:#75715e">// 密集一组
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define BDIAGONAL2_FILL		(BYTE*)&#34;\x44\x88\x11\x22\x44\x88\x11\x22&#34;
+</span><span style="color:#75715e">#define CROSS2_FILL			(BYTE*)&#34;\xff\x11\x11\x11\xff\x11\x11\x11&#34;	</span><span style="color:#75715e">// (对应 BGI 的 fill HATCH_FILL)
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define DIAGCROSS2_FILL		(BYTE*)&#34;\x55\x88\x55\x22\x55\x88\x55\x22&#34;
+</span><span style="color:#75715e">#define DOT2_FILL			(BYTE*)&#34;\x88\x00\x22\x00\x88\x00\x22\x00&#34;	</span><span style="color:#75715e">// (对应 BGI 的 CLOSE_DOT_FILL)
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define FDIAGONAL2_FILL		(BYTE*)&#34;\x22\x11\x88\x44\x22\x11\x88\x44&#34;
+</span><span style="color:#75715e">#define HORIZONTAL2_FILL	(BYTE*)&#34;\x00\x00\xff\x00\x00\x00\xff\x00&#34;
+</span><span style="color:#75715e">#define VERTICAL2_FILL		(BYTE*)&#34;\x11\x11\x11\x11\x11\x11\x11\x11&#34;
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 粗线一组
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define BDIAGONAL3_FILL		(BYTE*)&#34;\xe0\xc1\x83\x07\x0e\x1c\x38\x70&#34;	</span><span style="color:#75715e">// (对应 BGI 的 SLASH_FILL)
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define CROSS3_FILL			(BYTE*)&#34;\x30\x30\x30\x30\x30\x30\xff\xff&#34;
+</span><span style="color:#75715e">#define DIAGCROSS3_FILL		(BYTE*)&#34;\xc7\x83\xc7\xee\x7c\x38\x7c\xee&#34;
+</span><span style="color:#75715e">#define DOT3_FILL			(BYTE*)&#34;\xc0\xc0\x0c\x0c\xc0\xc0\x0c\x0c&#34;
+</span><span style="color:#75715e">#define FDIAGONAL3_FILL		(BYTE*)&#34;\x07\x83\xc1\xe0\x70\x38\x1c\x0e&#34;
+</span><span style="color:#75715e">#define HORIZONTAL3_FILL	(BYTE*)&#34;\xff\xff\x00\x00\xff\xff\x00\x00&#34;	</span><span style="color:#75715e">// (对应 BGI 的 LINE_FILL)	
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define VERTICAL3_FILL		(BYTE*)&#34;\x33\x33\x33\x33\x33\x33\x33\x33&#34;
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 其它
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define INTERLEAVE_FILL		(BYTE*)&#34;\xcc\x33\xcc\x33\xcc\x33\xcc\x33&#34;	</span><span style="color:#75715e">// (对应 BGI 的 INTERLEAVE_FILL) 
+</span></code></pre></div><p>代码效果</p>
+<p><img src="/img/rose.png" alt="clock"></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

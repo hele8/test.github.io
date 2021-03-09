@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 何磊</title>
+    <link>https://hele8.github.io/posts/</link>
+    <description>Recent content in Posts on 何磊</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 12 Jan 2021 11:22:32 +1422</lastBuildDate><atom:link href="https://hele8.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;学习笔记02</title>
+      <link>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/</link>
+      <pubDate>Tue, 12 Jan 2021 11:22:32 +1422</pubDate>
+      
+      <guid>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/</guid>
+      <description>C++学习笔记02 冒泡排序 #include &amp;lt;iostream&amp;gt; using namespace std; #include &amp;lt;ctime&amp;gt; int main() {	int arr[]={3,2,5,4,1,6,7,8,9}; cout&amp;lt;&amp;lt;&amp;quot;排序前&amp;quot;&amp;lt;&amp;lt;endl; for(int i=0;i&amp;lt;9;i++) { cout&amp;lt;&amp;lt;arr[i]&amp;lt;&amp;lt;endl; } /* for (int j=0;j&amp;lt;8;j++) { for(int k=0;k&amp;lt;8-j;k++) { if(arr[k]&amp;gt;arr[k+1]) { int temp=arr[k]; arr[k]=arr[k+1]; arr[k+1]=temp; } } } */ int j=8; while(j&amp;gt;1) { for(int k=0;k&amp;lt;j;k++) { if(arr[k]&amp;gt;arr[k+1]) { int temp=arr[k]; arr[k]=arr[k+1]; arr[k+1]=temp; } } j--; } cout&amp;lt;&amp;lt;&amp;quot;排序后&amp;quot;&amp;lt;&amp;lt;endl; for(int m=0;m&amp;lt;9;m++) { cout&amp;lt;&amp;lt;arr[m]&amp;lt;&amp;lt;endl; } system(&amp;quot;pause&amp;quot;); return 0; } 数组定义的方式
+四种
+int arr[2][3]; int arr2[2][3]={ {1,2,3}, {4,5,6} };//推荐，比较直观二维数 int arr3[2][3]={1,2,3,4,5,88}; int arr3[0][3]={1,2,3,4,5,88};//可以省略行数但是列数不可以省略 成绩</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;学习笔记01</title>
+      <link>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/</link>
+      <pubDate>Wed, 06 Jan 2021 11:22:15 +0800</pubDate>
+      
+      <guid>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/</guid>
+      <description>C++学习笔记 #include &amp;lt;iostream&amp;gt; using namespace std; #define week 7 int main() { printf(&amp;quot;hello world \n&amp;quot;); int a=10; short b=32768; cout&amp;lt;&amp;lt;&amp;quot;b=&amp;quot;&amp;lt;&amp;lt;b&amp;lt;&amp;lt;endl; system(&amp;quot;pause&amp;quot;);	return 0; } 注释 //1.单行注释 //2.多行注释 /* main是一个程序的入口，有且仅有一个*/
+变量 数据类型 变量名称=初始值；
+常量 1.宏常量#define 常量名 7
+2.修饰的常量 const 常量名=数值；
+标识符命名规则 1.不能使用关键字、 2.只能由字母数字下划线组成 3，第一个字符必须是字母或者下划线； 4.标识符中字母区分大小写
+数据类型 整型 1.短整型 short 2字节
+2.整型 int 4字节
+3.长整型 long 4字节
+4.长长整形long long 8字节
+sizeof 统计数据类型所占用的内存空间
+浮点型 单精度 float 4字节 float f1=3.14f;
+双精度 double 8字节
+科学计数法</description>
+    </item>
+    
+    <item>
+      <title>Python爬取B站弹幕</title>
+      <link>https://hele8.github.io/posts/python%E5%A6%82%E4%BD%95%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95/</link>
+      <pubDate>Sun, 28 Jun 2020 23:12:15 +0800</pubDate>
+      
+      <guid>https://hele8.github.io/posts/python%E5%A6%82%E4%BD%95%E7%88%AC%E5%8F%96b%E7%AB%99%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95/</guid>
+      <description>一个超级简单的爬取弹幕的代码——python学习之旅
+github地址：https://github.com/hele8/Danmu-B</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;学习笔记05-职工管理系统</title>
+      <link>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005-%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Thu, 21 May 2020 23:12:15 +0800</pubDate>
+      
+      <guid>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005-%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</guid>
+      <description>利用类和对象的知识，搭建一个简易的职工管理系统，搭建效果图
+代码地址</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;学习笔记03-生成一个简易钟表</title>
+      <link>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003-%E7%AE%80%E6%98%93%E9%92%9F%E8%A1%A8/</link>
+      <pubDate>Wed, 06 May 2020 11:22:15 +0800</pubDate>
+      
+      <guid>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003-%E7%AE%80%E6%98%93%E9%92%9F%E8%A1%A8/</guid>
+      <description>代码
+#include &amp;lt;graphics.h&amp;gt;#include &amp;lt;conio.h&amp;gt;#include &amp;lt;math.h&amp;gt; // 用于计算角度#include &amp;lt;time.h&amp;gt; // 用于获取时间#include &amp;lt;stdio.h&amp;gt; #define PI 3.14159265359  // 从系统获取到时、分、秒，然后填入。注意：hour为12进制 void Draw(int hour, int minute, int second) { double a_hour, a_min, a_sec;	// 弧度 	int x_hour, y_hour, x_min, y_min, x_sec, y_sec; // 时分秒的末端位置  a_sec = second*2*PI/60; // 计算秒的角度，其实是6 	a_min = minute*2*PI/60 + a_sec/60; // 计算分的角度，需要累加秒的角度，且除以60 	a_hour = hour*2*PI/12 + a_min/12; // 计算时的角度，注意是12份，且加上分的角度除以12  // 计算时分秒针的终端位置，正弦余弦的计算，圆心位置+半径乘以角度 	x_sec = 320 + (int)(120*sin(a_sec)); y_sec = 240 - (int)(120*cos(a_sec)); x_min = 320 + (int)(100*sin(a_min)); y_min = 240 - (int)(100*cos(a_min)); x_hour = 320 + (int)(80*sin(a_hour)); y_hour = 240 - (int)(80*cos(a_hour)); // 设置每跟针的粗细和颜色，然后从圆点绘制到终点 	setlinestyle(PS_SOLID, 10); setlinecolor(WHITE); line(320, 240, x_hour, y_hour); setlinestyle(PS_SOLID, 8); setlinecolor(GREEN); line(320, 240, x_min, y_min); setlinestyle(PS_SOLID, 4); setlinecolor(RED); line(320, 240, x_sec, y_sec); } // 绘制表盘刻度 //传入秒，以及需要写入的数字 void kedu(int second, int num) { double a_sec;	// 弧度 	a_sec = second*2*PI/60; int x1,y1,x2,y2,x3,y3; x1 = 320 + (int)(100*sin(a_sec));// 计算刻度的起点 	y1 = 240 - (int)(100*cos(a_sec)); x2 = 320 + (int)(120*sin(a_sec));// 计算刻度的终点 	y2 = 240 - (int)(120*cos(a_sec)); x3 = 315 + (int)(130*sin(a_sec));// 计算文字的起始位置，需要将圆心延左上角移动 	y3 = 235 - (int)(130*cos(a_sec)); // 将传进来的数字，进行转换 	TCHAR s[4]; if(second%5 == 0)// 每5个刻度，有一个加粗 	{ setlinestyle(PS_SOLID, 5); _stprintf(s,_T(&amp;#34;%d&amp;#34;), num);// 参看官方文档，有多种方式 	outtextxy(x3, y3, s); } else setlinestyle(PS_SOLID, 2); setlinecolor(WHITE); line(x1,y1,x2,y2); } int main() { //start: 创建绘图窗口 	initgraph(640, 480); circle(320, 240, 2); // 圆心 	circle(320, 240, 60); // 半圈  // 这里设置最外圈 	setlinecolor(YELLOW); setlinestyle(PS_DASHDOTDOT, 8); circle(320, 240, 160); outtextxy(290, 300, _T(&amp;#34;My Clock&amp;#34;)); // 整个区域，都是异或模式，就可以看到线条叠加时的效果，且指针移动的效果 	setwritemode(R2_XORPEN); // 用于标刻度 	int arr[] = {12,1,2,3,4,5,6,7,8,9,10,11}; int index = 0; for(int i = 0; i &amp;lt; 60; ++i) { kedu(i, arr[index]);// 从0开始 	if(i%5 == 0) // 每5个标记一次 	++index; } SYSTEMTIME ti;// 获取系统时间，24进制时，时针需要减去12 	while(!</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;学习笔记04-玫瑰花</title>
+      <link>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004-%E7%8E%AB%E7%91%B0%E8%8A%B1/</link>
+      <pubDate>Mon, 04 May 2020 21:21:11 +0800</pubDate>
+      
+      <guid>https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004-%E7%8E%AB%E7%91%B0%E8%8A%B1/</guid>
+      <description>代码
+/****************************************************** * EasyX Library for C++ (Ver:20200902) * https://easyx.cn * * graphics.h *	Based on easyx.h and retaining several old API. ******************************************************/ #pragma once  #include &amp;lt;easyx.h&amp;gt; // 兼容 initgraph 绘图模式的宏定义（无实际意义） #define DETECT	0 #define VGA	0 #define	VGALO	0 #define VGAMED	0 #define VGAHI	0 #define CGA	0 #define	CGAC0	0 #define	CGAC1	0 #define CGAC2	0 #define CGAC3	0 #define CGAHI	0 #define EGA	0 #define EGALO	0 #define	EGAHI	0  // 绘图窗口初始化参数（已废弃，请使用新的宏定义） #define SHOWCONSOLE	1	// 创建图形窗口时，保留控制台的显示 #define NOCLOSE	2	// 没有关闭功能 #define NOMINIMIZE	4	// 没有最小化功能  // BGI 格式的初始化图形设备，默认 640 x 480 HWND initgraph(int* gdriver, int* gmode, char* path); void bar(int left, int top, int right, int bottom);	// 画无边框填充矩形 void bar3d(int left, int top, int right, int bottom, int depth, bool topflag);	// 画有边框三维填充矩形  void drawpoly(int numpoints, const int *polypoints);	// 画多边形 void fillpoly(int numpoints, const int *polypoints);	// 画填充的多边形  int getmaxx();	// 获取最大的宽度值 int getmaxy();	// 获取最大的高度值  COLORREF getcolor();	// 获取当前绘图前景色 void setcolor(COLORREF color);	// 设置当前绘图前景色  void setwritemode(int mode);	// 设置前景的二元光栅操作模式  /////////////////////////////////////////////////////////////////////////////////// // 以下函数仅为兼容早期 EasyX 的接口，不建议使用。请使用相关新函数替换。 //  #if _MSC_VER &amp;gt; 1200 	#define _EASYX_DEPRECATE(_NewFunc) __declspec(deprecated(&amp;#34;This function is deprecated.</description>
+    </item>
+    
+    <item>
+      <title>我的第一篇博客</title>
+      <link>https://hele8.github.io/posts/myblog/</link>
+      <pubDate>Fri, 01 May 2020 11:20:16 +0800</pubDate>
+      
+      <guid>https://hele8.github.io/posts/myblog/</guid>
+      <description>Hello 大家好，
+这里是石头的个人主页
+一个学编程的小菜鸟
+记录自己的编程学习
+学习~进步~~</description>
+    </item>
+    
+  </channel>
+</rss>

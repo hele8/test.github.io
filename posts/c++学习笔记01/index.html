@@ -1,0 +1,2046 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>C&#43;&#43;学习笔记01 // 何磊</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://hele8.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43;学习笔记01"/>
+<meta name="twitter:description" content="C&#43;&#43;学习笔记 #include &lt;iostream&gt; using namespace std; #define week 7 int main() { printf(&quot;hello world \n&quot;); int a=10; short b=32768; cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl; system(&quot;pause&quot;);	return 0; } 注释 //1.单行注释 //2.多行注释 /* main是一个程序的入口，有且仅有一个*/
+变量 数据类型 变量名称=初始值；
+常量 1.宏常量#define 常量名 7
+2.修饰的常量 const 常量名=数值；
+标识符命名规则 1.不能使用关键字、 2.只能由字母数字下划线组成 3，第一个字符必须是字母或者下划线； 4.标识符中字母区分大小写
+数据类型 整型 1.短整型 short 2字节
+2.整型 int 4字节
+3.长整型 long 4字节
+4.长长整形long long 8字节
+sizeof 统计数据类型所占用的内存空间
+浮点型 单精度 float 4字节 float f1=3.14f;
+双精度 double 8字节
+科学计数法"/>
+
+    <meta property="og:title" content="C&#43;&#43;学习笔记01" />
+<meta property="og:description" content="C&#43;&#43;学习笔记 #include &lt;iostream&gt; using namespace std; #define week 7 int main() { printf(&quot;hello world \n&quot;); int a=10; short b=32768; cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl; system(&quot;pause&quot;);	return 0; } 注释 //1.单行注释 //2.多行注释 /* main是一个程序的入口，有且仅有一个*/
+变量 数据类型 变量名称=初始值；
+常量 1.宏常量#define 常量名 7
+2.修饰的常量 const 常量名=数值；
+标识符命名规则 1.不能使用关键字、 2.只能由字母数字下划线组成 3，第一个字符必须是字母或者下划线； 4.标识符中字母区分大小写
+数据类型 整型 1.短整型 short 2字节
+2.整型 int 4字节
+3.长整型 long 4字节
+4.长长整形long long 8字节
+sizeof 统计数据类型所占用的内存空间
+浮点型 单精度 float 4字节 float f1=3.14f;
+双精度 double 8字节
+科学计数法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-06T11:22:15&#43;08:00" />
+<meta property="article:modified_time" content="2021-01-06T11:22:15&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://hele8.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>何磊</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">个人主页</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/about/">关于自己</a>
+      </nav>
+      <p>一个努力学习的非专业程序猿~</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/hele8" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">C&#43;&#43;学习笔记01</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 6, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          13 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="c学习笔记">C++学习笔记</h1>
+<pre><code>#include &lt;iostream&gt; 
+using namespace std;
+#define week 7
+
+int main()
+{
+	printf(&quot;hello world \n&quot;);
+
+	int a=10;
+	short b=32768;
+	cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl;
+	system(&quot;pause&quot;);	return 0;
+}
+</code></pre><h1 id="注释">注释</h1>
+<p>//1.单行注释
+//2.多行注释
+/*
+main是一个程序的入口，有且仅有一个*/</p>
+<h1 id="变量">变量</h1>
+<p>数据类型 变量名称=初始值；</p>
+<h1 id="常量">常量</h1>
+<p>1.宏常量#define 常量名 7</p>
+<p>2.修饰的常量 const  常量名=数值；</p>
+<h1 id="标识符命名规则">标识符命名规则</h1>
+<p>1.不能使用关键字、
+2.只能由字母数字下划线组成
+3，第一个字符必须是字母或者下划线；
+4.标识符中字母区分大小写</p>
+<h1 id="数据类型">数据类型</h1>
+<h2 id="整型">整型</h2>
+<p>1.短整型 short 2字节</p>
+<p>2.整型 int 4字节</p>
+<p>3.长整型 long 4字节</p>
+<p>4.长长整形long long 8字节</p>
+<h2 id="sizeof">sizeof</h2>
+<p>统计数据类型所占用的内存空间</p>
+<h2 id="浮点型">浮点型</h2>
+<p>单精度 float 4字节 float f1=3.14<strong>f</strong>;</p>
+<p>双精度 double 8字节</p>
+<p>科学计数法</p>
+<p>float 变量名=3e2</p>
+<h2 id="字符型">字符型</h2>
+<pre><code>char ch=&quot;a&quot;;
+
+cout&lt;&lt;&quot;f1= &quot;&lt;&lt;(int)ch&lt;&lt;endl;//强制转换为ASICC码
+</code></pre><h2 id="转义字符">转义字符</h2>
+<p>换行符\n;</p>
+<p>反斜杠\</p>
+<p><em><strong>水平\t 8个空格对齐效果</strong></em></p>
+<h2 id="字符串">字符串</h2>
+<p>1.C风格字符串</p>
+<p>char字符串名[]=&ldquo;字符串&rdquo;  举例</p>
+<pre><code>char str[]=&quot;hello world&quot;;
+</code></pre><p>2.C++风格</p>
+<p>包含头文件</p>
+<pre><code>#include &lt;string&gt;
+</code></pre><pre><code>string str2=&quot;hello world&quot;
+</code></pre><h2 id="布尔类型">布尔类型</h2>
+<p>只占用一个字节</p>
+<p>1.创建布尔类型所占用的内存空间</p>
+<h2 id="数据的输入">数据的输入</h2>
+<pre><code>int a=0;
+cout&lt;&lt;“请输入a的值&quot;&lt;&lt;endl；
+cin&gt;&gt;a；
+</code></pre><h2 id="运算符">运算符</h2>
+<p>算术运算符</p>
+<p>复制运算符</p>
+<p>比较运算符</p>
+<pre><code>cout&lt;&lt;(a==b)&lt;&lt;endl;//(加括号表示优先级)
+</code></pre><p>逻辑运算符</p>
+<p>与 &amp;&amp; 或 || 非！；</p>
+<p>程序逻辑结构</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int num1=0;
+	int num2=0;
+	int num3=0;
+	cout&lt;&lt;&quot;请输入小猪A的体重：&quot;&lt;&lt;endl;
+	cin&gt;&gt;num1;
+	cout&lt;&lt;&quot;您输入小猪A的体重为：&quot;&lt;&lt;num1&lt;&lt;endl;
+	cout&lt;&lt;&quot;请输入小猪B的体重：&quot;&lt;&lt;endl;
+	cin&gt;&gt;num2;
+	cout&lt;&lt;&quot;您输入小猪B的体重为：&quot;&lt;&lt;num2&lt;&lt;endl;
+	cout&lt;&lt;&quot;请输入小猪C的体重：&quot;&lt;&lt;endl;
+	cin&gt;&gt;num3;
+	cout&lt;&lt;&quot;您输入小猪C的体重为：&quot;&lt;&lt;num3&lt;&lt;endl;
+	system (&quot;pause&quot;);
+	return 0;
+
+}
+</code></pre><pre><code>#include &lt;iostream&gt; //
+#include &lt;string&gt;
+using namespace std;
+#define week 7
+
+int main()
+{
+	int score=0;
+	cout&lt;&lt;&quot;请输入你输入你的分数：&quot;&lt;&lt;endl;
+	cin&gt;&gt;score;
+	cout&lt;&lt;&quot;你输入的分数为：&quot;&lt;&lt;score&lt;&lt;endl;
+	if(score&gt;=600)
+	{
+		cout&lt;&lt;&quot;一本&quot;&lt;&lt;endl;
+		if(score&gt;700)
+		{
+			cout&lt;&lt;&quot;北大&quot;&lt;&lt;endl;
+		}
+		else if(score&gt;650)
+		{
+			cout&lt;&lt;&quot;清华！&quot;&lt;&lt;endl;
+		}
+		else
+		{
+			cout&lt;&lt;&quot;人大&quot;&lt;&lt;endl;
+		
+		}
+
+	}
+	else if(score&gt;=550)
+	{
+		cout&lt;&lt;&quot;二本&quot;&lt;&lt;endl;
+	}
+	else if(score&gt;=400)
+	{
+		cout&lt;&lt;&quot;三本&quot;&lt;&lt;endl;
+	}
+	else{
+		cout&lt;&lt;&quot;很遗憾&quot;&lt;&lt;endl;
+	}
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre><pre><code>#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int num1=0;
+	int num2=0;
+	int num3=0;
+	cout&lt;&lt;&quot;请输入小猪A的体重：&quot;&lt;&lt;endl;
+	cin&gt;&gt;num1;
+	cout&lt;&lt;&quot;您输入小猪A的体重为：&quot;&lt;&lt;num1&lt;&lt;endl;
+	cout&lt;&lt;&quot;请输入小猪B的体重：&quot;&lt;&lt;endl;
+	cin&gt;&gt;num2;
+	cout&lt;&lt;&quot;您输入小猪B的体重为：&quot;&lt;&lt;num2&lt;&lt;endl;
+	cout&lt;&lt;&quot;请输入小猪C的体重：&quot;&lt;&lt;endl;
+	cin&gt;&gt;num3;
+	cout&lt;&lt;&quot;您输入小猪C的体重为：&quot;&lt;&lt;num3&lt;&lt;endl;
+	if(num1&gt;num2)
+	{
+		if(num1&gt;num3)
+		{
+			cout&lt;&lt;&quot;小猪A最重&quot;&lt;&lt;endl;
+		}
+	}
+	else if(num2&gt;num1)
+	{
+		if(num2&gt;num3)
+		{
+			cout&lt;&lt;&quot;小猪B最重&quot;&lt;&lt;endl;
+		}
+	}
+	else{
+		cout&lt;&lt;&quot;小猪C最重&quot;&lt;&lt;endl;
+	}
+	system (&quot;pause&quot;);
+	return 0;
+
+}
+</code></pre><p>三目运算符</p>
+<p>可以左边赋值 c=(a&gt;b?a:b);</p>
+<p>也可以右边赋值 (a&gt;b?a:b)=100；</p>
+<h2 id="switch">SWITCH</h2>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+int main()
+{	
+	int score=0;
+	cout&lt;&lt;&quot;请给电影打分&quot;&lt;&lt;endl;
+	cin&gt;&gt;score;
+	cout&lt;&lt;&quot;分数为:&quot;&lt;&lt;score&lt;&lt;endl;
+	switch(score)
+	{
+		case 10:
+			cout&lt;&lt;&quot;经典电影&quot;&lt;&lt;endl;
+			break;
+		case 9:
+			cout&lt;&lt;&quot;经典电影&quot;&lt;&lt;endl;
+			break;
+		case 8:
+			cout&lt;&lt;&quot;可以电影&quot;&lt;&lt;endl;
+			break;
+		default:
+			cout&lt;&lt;&quot;烂片&quot;&lt;&lt;endl;
+			break;
+
+	}
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>猜数字游戏</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;ctime&gt;
+int main()
+{	
+	srand((unsigned int)time(NULL));
+	int r=rand()%100+1;
+	int val=0;
+	while(1)
+	{
+		cin&gt;&gt;val;
+		if(r&gt;val)
+		{
+			cout&lt;&lt;&quot;你输入的数字太小了&quot;&lt;&lt;endl;
+		}
+		else if(r&lt;val)
+		{
+			cout&lt;&lt;&quot;你输入的数字太大了&quot;&lt;&lt;endl;
+		}
+		else{
+			cout&lt;&lt;&quot;恭喜猜对了&quot;&lt;&lt;endl;
+			break;
+		}
+	}
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;ctime&gt;
+int main()
+{	
+	int num=100;
+	do{
+		int num1=0;
+		int num2=0;
+		int num3=0;
+
+		num1=num%10;
+		num2=num/10%10;
+		num3=num/100;
+		if(num1*num1*num1+num3*num3*num3+num2*num2*num2==num)
+		{
+			cout&lt;&lt;num&lt;&lt;endl;
+		}
+
+		num++;
+	}while(num&lt;1000);
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>憋七游戏</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;ctime&gt;
+int main()
+{	
+	for(int i=0;i&lt;100;i++)
+	{
+		if(i % 7==0||i % 10==7||i / 10==7)
+		{
+			cout&lt;&lt;&quot;敲桌子&quot;&lt;&lt;endl;
+		}
+		else
+		{
+			cout&lt;&lt;i&lt;&lt;endl;
+		}
+	}
+
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><h2 id="嵌套循环">嵌套循环</h2>
+<p>九九乘法表</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;ctime&gt;
+int main()
+{	
+	for(int i=1;i&lt;10;i++)
+	{
+		for(int j=1;j&lt;i;j++)
+		{
+			cout&lt;&lt;j&lt;&lt;&quot;*&quot;&lt;&lt;i&lt;&lt;&quot;=&quot;&lt;&lt;i*j&lt;&lt;&quot;\t&quot;;
+		}
+		cout&lt;&lt;endl;
+	}
+
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;ctime&gt;
+int main()
+{	
+	cout&lt;&lt;&quot;请选择副本难度:&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;1 简单&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;2 中等&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;3 困难&quot;&lt;&lt;endl;
+	int h=0;
+	cin&gt;&gt;h;
+	switch(h)
+	{
+		case 1:
+			cout&lt;&lt;&quot;简单&quot;&lt;&lt;endl;
+			break;
+		case 2:
+			cout&lt;&lt;&quot;中等&quot;&lt;&lt;endl;
+			break;
+		case 3:
+			cout&lt;&lt;&quot;难度&quot;&lt;&lt;endl;
+			break;
+	}
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>continue语句</p>
+<p>执行下一次循环</p>
+<p>数组</p>
+<p>1.连续的内存空间</p>
+<p>定义方式：</p>
+<p>1.数据类型 数组名 数组长度</p>
+<pre><code>//查看数组的首地址
+
+cout&lt;&lt;arr&lt;&lt;endl;
+
+//查看数组元素的地址
+
+cout&lt;&lt;&amp;arr[0]&lt;&lt;endl;
+</code></pre><p>数组名是一个常量，指向首地址，不可以复制</p>
+<p>查找数组最大值</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;ctime&gt;
+int main()
+{	
+	int arr[5]={300,220,330,440,250};
+	int max=0;
+
+	for(int i=0;i&lt;5;i++)
+	{
+		if(arr[i]&gt;max)
+		{
+			max=arr[i];
+			i++;
+		}
+		i++;
+	}
+	cout&lt;&lt;max&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><h2 id="冒泡排序">冒泡排序</h2>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;ctime&gt;
+int main()
+{	
+	int arr[]={3,2,5,4,1,6,7,8,9};
+	cout&lt;&lt;&quot;排序前&quot;&lt;&lt;endl;
+	for(int i=0;i&lt;9;i++)
+	{
+		cout&lt;&lt;arr[i]&lt;&lt;endl;
+	}
+	/*
+	for (int j=0;j&lt;8;j++)
+	{
+		for(int k=0;k&lt;8-j;k++)
+		{
+			if(arr[k]&gt;arr[k+1])
+			{
+				int temp=arr[k];
+				arr[k]=arr[k+1];
+				arr[k+1]=temp;
+			}
+		}
+	}
+	*/
+	int j=8;
+	while(j&gt;1)
+	{
+		for(int k=0;k&lt;j;k++)
+		{
+			if(arr[k]&gt;arr[k+1])
+			{
+				int temp=arr[k];
+				arr[k]=arr[k+1];
+				arr[k+1]=temp;
+			}
+		}
+		j--;
+	}
+
+	cout&lt;&lt;&quot;排序后&quot;&lt;&lt;endl;
+	for(int m=0;m&lt;9;m++)
+	{
+		cout&lt;&lt;arr[m]&lt;&lt;endl;
+	}
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>数组定义的方式</p>
+<p>四种</p>
+<pre><code>int  arr[2][3];
+int arr2[2][3]={
+		{1,2,3},
+		{4,5,6}
+	};//推荐，比较直观二维数
+int arr3[2][3]={1,2,3,4,5,88};
+int arr3[0][3]={1,2,3,4,5,88};//可以省略行数但是列数不可以省略
+</code></pre><p>成绩</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include&lt;string&gt;
+#include &lt;ctime&gt;
+int main()
+{	
+	int arr[3][3]=
+	{
+		{100,100,100},
+		{90,50,100},
+		{60,70,80}
+	};
+	string names[3]={&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;} ;
+	for(int i=0;i&lt;3;i++)
+	{
+		int sum=0;
+		for(int j=0;j&lt;3;j++)
+		{
+			sum=sum+arr[i][j];
+		}
+		cout&lt;&lt;names[i]&lt;&lt;&quot;的成绩为：&quot;&lt;&lt;sum&lt;&lt;endl;
+	}
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre><p>函数</p>
+<p>基本流程</p>
+<p>1.返回值类型</p>
+<p>2.函数名</p>
+<p>3.参数列表</p>
+<p>4.函数体语句</p>
+<p>5.return表达式</p>
+<h2 id="值传递">值传递</h2>
+<p>只与形参有关</p>
+<p>常见的样式</p>
+<p>无参无返；</p>
+<p>有参无返</p>
+<p>无参无返</p>
+<p>有参有返</p>
+<p>函数的声明</p>
+<p>作用提前申明函数的存在防止运行中报错，进而可以将函数放在main函数之后，</p>
+<pre><code>int sswap(int a,int b);
+</code></pre><p>函数的分文件编写</p>
+<p>1.创建后缀名为.h 的文件</p>
+<p>2.创建后缀名为.cpp的文件</p>
+<p>3.在头文件中写函数的申明</p>
+<p>4.在源文件中写函数的定义</p>
+<h1 id="指针">指针</h1>
+<p>指针三部曲</p>
+<pre><code>//定义指针
+
+int *p
+//建立关系
+p=&amp;a;
+//输出指针数据
+cout&lt;&lt;*p//*指针表示解引用
+可以修改*p来达到修改该地址位置值的效果
+</code></pre><p>空指针</p>
+<p>指向编号为0的位置，初始化全局变量</p>
+<p>不可以进行访问</p>
+<p>野指针</p>
+<p>指针指向非法内存空间</p>
+<p>const 修饰指针——常量指针；const int *p=&amp;a;</p>
+<p>指针的指向可以修改，指针指向的值不可以修改</p>
+<p>const 修饰常量——指针常量  int *const p=&amp;a</p>
+<p>const 既修饰指针有修饰常量</p>
+<p>指针和数组</p>
+<p>指针访问数组中元素</p>
+<pre><code>int *p=arr;
+cout&lt;&lt;*p&lt;&lt;endl;
+</code></pre><p>结构体</p>
+<p>结构体创建</p>
+<pre><code>struct Student{
+	string name;
+	int age;
+	int score;
+}（//s3);
+</code></pre><p>结构体定义</p>
+<pre><code>//2.1 
+struct Student s1;
+s1.name=&quot;&quot;;
+//2.2 
+struct student s2={};
+//2.3创建时顺便定义结构体名称
+s3.name=&quot;&quot;;
+</code></pre><p>结构体数组</p>
+<pre><code>//1.创建结构体
+
+struct student
+{
+string name;
+int age;
+int score;
+}
+//2.创建结构体数组
+struct student s1array[3]=
+{
+{&quot;&quot;,18,100},
+{&quot;李四&quot;,28,99},
+{&quot;王五&quot;,38,98}
+}
+3.赋值
+s1array[0].name=&quot;赵六&quot;;
+4.访问结构体数组元素
+for(int i=0;i&lt;3;i++)
+{
+    cout&lt;&lt;s1array[i].name&lt;&lt;&quot; &quot;&lt;&lt;s1array[i].age&lt;&lt;&quot; &quot;&lt;&lt;s1array[i].score&lt;&lt;endl;
+}
+</code></pre><p>结构体指针</p>
+<pre><code>struct student s1={};
+
+struct student *p=&amp;s1;
+p-&gt;age;
+</code></pre><p>嵌套结构体</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+#include &lt;ctime&gt;
+struct Student{
+	string sname;
+	int score;
+};
+struct Teacher{
+	string name;
+	struct Student Sarray[5];
+};
+void allocateSpace (struct Teacher Tarray[],int len)
+{
+	string name[3]={&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;};
+	string name2=&quot;ABCDE&quot;;
+	for (int i=0;i&lt;len;i++)
+	{
+
+		Tarray[i].name=name[i];
+		for (int j=0;j&lt;5;j++)
+		{
+			Tarray[i].Sarray[j].sname=&quot;Student&quot;;
+			Tarray[i].Sarray[j].sname+=name2[j];
+			int random=rand()%61+40;
+			Tarray[i].Sarray[j].score=random;
+		}
+	}
+
+}
+void printInfo(struct Teacher Tarray[],int len)
+{
+
+	for (int i=0;i&lt;len;i++)
+	{
+		cout&lt;&lt;Tarray[i].name&lt;&lt;&quot;老师所带的五位学生的成绩如下：&quot;&lt;&lt;endl;
+		for (int j=0;j&lt;5;j++)
+		{
+			cout&lt;&lt;&quot;\t&quot;&lt;&lt;Tarray[i].Sarray[j].sname&lt;&lt;&quot;&quot;&lt;&lt;&quot;的成绩为&quot;&lt;&lt;Tarray[i].Sarray[j].score&lt;&lt;endl;
+		}
+
+	}
+}
+
+int main()
+{
+	//创建三名老师的数组
+	srand((unsigned int)time(NULL));
+	Teacher Tarray[3];
+	int len =sizeof(Tarray)/sizeof(Tarray[0]);
+	allocateSpace(Tarray,len);
+
+	printInfo(Tarray,len);
+
+	system (&quot;pause&quot;);
+	return 0;
+
+
+}
+</code></pre><pre><code>#include &lt;iostream&gt;
+using namespace std;
+#include &lt;string&gt;
+//1.设计英雄的结构体
+struct hero 
+{
+	string name;
+	int age;
+	string sex; 
+
+};
+//按照年龄升序排列，冒泡排序
+void bubbleSort(struct hero He[],int len)
+{
+	for(int i=0;i&lt;len-1;i++)
+	{
+		for (int j=0;j&lt;len-i-1;j++)
+		{
+			if (He[j].age&gt;He[j+1].age)
+			{
+				struct hero temp=He[j];//自己写的时候这里未初始化这里的值导致失败
+				He[j]=temp;
+				He[j]=He[j+1];
+				He[j+1]=temp;
+			}
+		}
+
+	}
+}
+ int main()
+ {
+	 //创建数组存放无名英雄
+	 struct hero H1[5]={
+		 {&quot;刘备&quot;,23,&quot;男&quot;},
+		 {&quot;关羽&quot;,22,&quot;男&quot;},
+		 {&quot;张飞&quot;,21,&quot;男&quot;},
+		 {&quot;赵云&quot;,24,&quot;男&quot;},
+		 {&quot;貂蝉&quot;,19,&quot;女&quot;}
+	 };	
+	 int len =sizeof(H1)/sizeof(H1[0]);
+	 for (int i=0;i&lt;5;i++)
+	 {
+		 cout&lt;&lt;H1[i].name&lt;&lt;H1[i].age&lt;&lt;H1[i].sex&lt;&lt;endl;
+	 }
+	 bubbleSort(H1,len);
+	 //排序后结果打印输出
+	 cout&lt;&lt;&quot;排序后&quot;&lt;&lt;endl;
+	 for (int i=0;i&lt;len;i++)
+	 {
+		 cout&lt;&lt;H1[i].name&lt;&lt;H1[i].age&lt;&lt;H1[i].sex&lt;&lt;endl;
+	 }
+	 system(&quot;pause&quot;);
+	 return 0;
+
+ }
+</code></pre><h1 id="c核心编程">C++核心编程</h1>
+<h2 id="1内存分区模型">1.内存分区模型</h2>
+<p>1.代码区</p>
+<p>2.全局区</p>
+<p>不在全局区 局部变量const 修饰的局部变量</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+int g_c=1;//全局变量
+//const 修饰的全局变量
+const int g_cc=10;
+int main()
+{
+	
+	int a=10;//普通局部变量
+	int b=10;
+	cout&lt;&lt;&quot;局部变量&quot;&lt;&lt;(int)&amp;a&lt;&lt;endl;
+	cout&lt;&lt;&quot;全局变量&quot;&lt;&lt;(int)&amp;g_c&lt;&lt;endl;
+	static int s_a=10;//静态变量;
+	cout&lt;&lt;&quot;静态局部变量&quot;&lt;&lt;(int)&amp;s_a&lt;&lt;endl;
+	cout&lt;&lt;&quot;const修饰的全局变量&quot;&lt;&lt;(int)&amp;g_cc&lt;&lt;endl;
+	const int c_l_cc=10;
+	//常量
+	//字符串常量
+	cout&lt;&lt;&quot;字符串常量&quot;&lt;&lt;(int)&quot;hello&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;const 修饰的局部变量&quot;&lt;&lt;(int)&amp;c_l_cc&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>3.栈区</p>
+<p>//栈区数据的注意事项 不要返回局部变量的地址</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+
+int *func(int b//形参)//形参和局部变量会放在栈区，不能返回地址
+{
+
+	int a=10;//局部变量
+	int *p=new int(10);
+	return &amp;a;
+
+}
+int main()
+{
+	int *p=func();
+	cout&lt;&lt;*p&lt;&lt;endl;
+	cout&lt;&lt;*p&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>4.堆区</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+//堆区开辟数据
+int *func()
+{
+	//利用new关键字开辟
+	int *p=new int(10);//可以利用new在堆区开辟空间保存数据
+	return p;
+
+}
+int main()
+{
+	int *p=func();
+	cout&lt;&lt;p&lt;&lt;endl;
+	cout&lt;&lt;*p&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>new的基本语法</p>
+<pre><code>//创建基本数据
+
+int *p=new int(10);
+delete p;
+
+//创建数组
+
+int *array=new int[10];
+delete[] array;
+#include &lt;iostream&gt;
+using namespace std;
+
+//new的基本用法
+int *func()
+{
+	//利用new关键字开辟
+	int *p=new int(10);//new返回的时指针
+	return p;
+
+}
+void test02()
+{
+	int * arry=new int[10];
+	for(int i=0;i&lt;10;i++)
+	{
+		arry[i]=i+100;
+	}
+	for(int i=0;i&lt;10;i++)
+	{
+		cout&lt;&lt;arry[i]&lt;&lt;endl;
+	}
+	delete[] arry;
+
+}
+int main()
+{
+	test02();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>引用</p>
+<pre><code>int a=10;
+int &amp;别名=a;
+#include &lt;iostream&gt;
+using namespace std;
+//注意事项
+1.引用必须要初始化
+//int &amp;b=a;初始需要告诉引用谁
+2.初始化后不可改变
+//new的基本用法
+int main()
+{
+	int a=10;
+	cout&lt;&lt;&quot;a=&quot;&lt;&lt;a&lt;&lt;endl;
+	int &amp;b=a;
+	cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl;
+	b=20;
+	cout&lt;&lt;&quot;a=&quot;&lt;&lt;a&lt;&lt;endl;
+	cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>引用作为函数参数</p>
+<pre><code>void change03(int &amp;c ,int &amp;d)
+{
+	int temp=c;
+	c=d;
+	d=temp;
+	cout&lt;&lt;c&lt;&lt;&quot;\t&quot;&lt;&lt;d&lt;&lt;endl;
+
+}
+int main()
+{
+	int a=10;
+	int b=30;
+	//change02(&amp;a,&amp;b);
+	change03(a,b);	
+	cout&lt;&lt;a&lt;&lt;&quot;\t&quot;&lt;&lt;b&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>引用作为函数返回值</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+//引用作为函数返回值
+int &amp; change03()//引用的方式返回变量
+{
+	int a=10;
+	return a;
+}
+int &amp; change04()//引用的方式返回变量
+{
+	static int a=10;//静态变量保存在全局区
+	return a;
+}
+int main()
+{
+	int a=10;
+	int b=30;
+	//change02(&amp;a,&amp;b);
+	int &amp;ref=change04();	
+	cout&lt;&lt;ref&lt;&lt;endl;
+	ref=1000;//引用的返回值可以作为左值
+	cout&lt;&lt;change04()&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+
+int &amp; change04()//引用的方式返回变量
+{
+	static int a=10;//静态变量保存在全局区
+	return a;
+}
+int main()
+{
+	int a=10;
+	int &amp;b=a;//本质是int * const b=&amp;a;
+	b=20; //*b=20;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>//常量引用</p>
+<pre><code>using namespace std;
+
+
+void showValue(const int &amp;b)
+{
+	cout&lt;&lt;&quot;b=&quot;&lt;&lt;b&lt;&lt;endl;
+}
+int main()
+{
+	int z=10;
+	showValue(z);
+	cout&lt;&lt;&quot;z=&quot;&lt;&lt;z&lt;&lt;endl;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>函数的提高</p>
+<p>函数的默认参数</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+void func(int a=10,int b=20,int c=30);
+int main()
+{
+	func(10,20,0);//如果传了使用自己的值，如果没有使用默认的值
+	system(&quot;pause&quot;);
+	return 0;
+}
+void func(int a,int b,int c)
+
+	//注意事项 
+	//1.如果某个位置有了默认的参数，后面的必须都有默认参数
+	//2.如果函数的申明有了默认参数，函的实现不能有默认参数 二者只能有一个默认参数
+{
+	cout&lt;&lt;a+b+c&lt;&lt;endl;
+
+}
+</code></pre><p>3.2函数的占位操作</p>
+<p>只需输入一个数据类型即可</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+void func(int a,int=10)
+{
+	cout&lt;&lt;&quot;hello world&quot;&lt;&lt;endl;
+
+}
+int main()
+{
+	func(10);//如果传了使用自己的值，如果没有使用默认的值
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>3.3函数的重载</p>
+<p>1.同一个作用域下</p>
+<p>2.函数名相同</p>
+<p>3.函数的参数类型不同或者个数不同</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+//函数重载
+//函数名相同，提高复用性
+//函数重载的满足条件
+//1.同一个作用域下
+//2.函数名相同
+//3.函数的参数类型不同，或者个数不同或者顺序不同
+void func()
+{
+	cout&lt;&lt;&quot;hello world&quot;&lt;&lt;endl;
+
+}
+void func(int b)
+{
+	cout&lt;&lt;&quot;hello world nihao&quot;&lt;&lt;endl;
+
+}
+
+int main()
+{
+	func();//如果传了使用自己的值，如果没有使用默认的值
+	system(&quot;pause&quot;);
+	return 0;
+}
+
+</code></pre><h2 id="类和对象">类和对象</h2>
+<p>4.1创建一个类</p>
+<pre><code>//1.创建一个类
+class circle
+{
+	//访问权限
+public://公共权限
+	//属性
+	int m_r;
+	//行为获取圆的周长
+	double calculateZC()
+	{
+		return 2*PI *m_r;
+	}
+
+};
+int main()
+{
+	//通过圆类  实例化
+	circle cl;
+	cl.m_r=10;
+</code></pre><p>4.2</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+class student
+{
+
+	//访问权限
+public://公共权限
+	//属性和行为统一称为成员
+	//属性 成员属性 成员变量
+	string s_name;
+	int s_number;
+	//行为成员函数 成员方法
+	//显示姓名学号
+	void showInfo()
+	{
+		cout&lt;&lt;&quot;姓名：&quot;&lt;&lt;s_name&lt;&lt;endl;
+		cout&lt;&lt;&quot;学号：&quot;&lt;&lt;s_number&lt;&lt;endl;
+	}
+	void setname(string name)
+	{
+		s_name=name;
+
+	}
+};
+int main()
+{
+	student s1;
+	//s1.s_name=&quot;张三&quot;;
+	s1.setname(&quot;张三&quot;);
+	s1.s_number=1551898;
+	s1.showInfo();
+	student s2;
+	s2.s_name=&quot;lisi&quot;;
+	s2.s_number=123;
+	s2.showInfo();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>4.3访问权限</p>
+<p>公共权限 public 成员</p>
+<p>保护权限 protected 成员类内可以访问，类外不可以访问 儿子可以访问父亲中的保护内容</p>
+<p>私有权限private 成员类内可以访问，类外不可以访问 儿子不可以访问私有</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+class people
+{
+
+	//访问权限
+public://公共权限
+	//属性和行为统一称为成员
+	string m_name;
+protected:
+	string m_car;
+private:
+	int Password;
+public:
+	void func()
+	{
+
+		m_name=&quot;张三&quot;;
+		m_car=&quot;拖拉机&quot;;
+		Password=12345678;
+	}
+};
+int main()
+{
+	people s1;
+	s1.m_name=&quot;李四&quot;;
+	//s1.m_car=&quot;废及&quot;;
+	//s1.Password=1223;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>4.4 struct 和class的区别</p>
+<p>struct 默认的访问权限public</p>
+<p>class默认为private</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+//成员属性设置为私有
+//1.可以自己控制读写权限
+//2.对于写可以检测数据有效性
+class person
+{
+public:
+	//提供接口写入name
+	void setname(string name1)
+	{
+
+		name=name1;
+	}
+	//提供接口读取name;
+	string getname()
+	{
+		return name;
+	}
+	void setage(int age1)
+	{
+		if(age1&gt;150||age1&lt;0)
+		{
+			cout&lt;&lt;&quot;您的输入有误&quot;&lt;&lt;endl;
+			return;
+		}
+		age=age1;
+
+	}
+	int get_age()
+	{
+		age=0;
+		return age;
+	}
+
+private:
+	string  name;
+	int age;
+	string lover;
+
+};
+
+int main()
+{
+	person s1;
+	s1.setname(&quot;张三&quot;);
+	cout&lt;&lt;s1.getname()&lt;&lt;endl;
+	s1.setage(18);
+	cout&lt;&lt;s1.get_age()&lt;&lt;endl;;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>立方体</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+//成员属性设置为私有
+//1.可以自己控制读写权限
+//2.对于写可以检测数据有效性
+class cube
+{
+	//设计属性，尽量设置为私有
+private:
+	int m_L;
+	int m_W;
+	int m_H;
+public:
+	void setLWH(int L,int W,int H)
+	{
+		m_L=L;
+		m_W=W;
+		m_H=H;
+	}
+	int getL()
+	{
+		return m_L;
+	}
+	int getW()
+	{
+		return m_W;
+	}
+	int getH()
+	{
+		return m_H;
+	}
+	int calS()
+	{
+		return 2*(m_L*m_W+m_L*m_H+m_W*m_H);
+	}
+	int calV()
+	{
+		return m_L*m_W*m_H;
+	}
+	//利用成员函数判断两个立方体是否相等
+	bool ISame(cube &amp;c)
+	{
+			if(m_H==c.getH()&amp;&amp;m_L==c.getL()&amp;&amp;m_W==c.getW())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+	}
+};
+//利用全局变量判断是否相等
+//bool ISame(cube &amp;c1,cube &amp;c2)
+//{
+//
+//	if(c1.getH()==c2.getH()&amp;&amp;c1.getL()==c2.getL()&amp;&amp;c1.getW()==c2.getW())
+//	{
+//		return true;
+//	}
+//	else
+//	{
+//		return false;
+//	}
+//}
+int main()
+{
+	cube c1;
+	c1.setLWH(10,20,20);
+	cube c2;
+	c2.setLWH(10,20,50);
+	cout&lt;&lt;&quot;c1的面积为&quot;&lt;&lt;c1.calS()&lt;&lt;&quot;\t&quot;&lt;&lt;&quot;c1体积为&quot;&lt;&lt;c1.calV()&lt;&lt;endl;
+	cout&lt;&lt;&quot;c2的面积为&quot;&lt;&lt;c2.calS()&lt;&lt;&quot;\t&quot;&lt;&lt;&quot;c2体积为&quot;&lt;&lt;c2.calV()&lt;&lt;endl;
+	bool ret =c1.ISame(c2);
+	if(ret)
+	{
+		cout&lt;&lt;&quot;两个立方体相等&quot;&lt;&lt;endl;
+	}
+	else
+	{
+		cout&lt;&lt;&quot;两个立方体不相等&quot;&lt;&lt;endl;
+	}
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>圆与点的位置关系</p>
+<p>知识点的类的分装</p>
+<pre><code>1.创建头文件，只保留声明，使用;补全代码
+#pragma once//防止头文件重复包含
+#include &lt;iostream&gt;
+using namespace std;
+class point
+{
+public:
+	//设置点X
+	void setx(int x);
+
+	//读取点X
+	int getx();
+	
+	//设置点y
+	void sety(int y);
+
+	//读取点y
+	int gety();
+private:
+	int m_X;
+	int m_Y;
+};
+</code></pre><pre><code>1.使用头文件
+只保留实现,添加circle::作用域，表明成员函数
+#include &quot;circle.h&quot;
+//只保留作用的文件 
+void circle::setr(int r)
+{
+	m_r=r;
+}
+//获取圆的半径
+int circle::getr()
+{
+	return m_r;
+}
+//设置圆的圆心
+void circle::setCenter(point center)
+{
+	C_center.setx(center.getx());
+	C_center.sety(center.gety());
+}
+//获取圆的圆心
+point circle::getCenter()
+{
+	return C_center;
+}
+</code></pre><pre><code>#include &lt;string&gt;
+#include &quot;circle.h&quot;
+#include &quot;point.h&quot;
+using namespace std;
+
+//创建点类
+//class point
+//{
+//public:
+//	//设置点X
+//	void setx(int x)
+//	{
+//		m_X=x;
+//	}
+//	//读取点X
+//	int getx()
+//	{
+//		return m_X;
+//	}
+//	//设置点y
+//	void sety(int y)
+//	{
+//		m_Y=y;
+//	}
+//	//读取点y
+//	int gety()
+//	{
+//		return m_Y;
+//	}
+//private:
+//	int m_X;
+//	int m_Y;
+//};
+//设置圆类
+//class circle
+//{
+//public:
+//	//设置圆的半径
+//	void setr(int r)
+//	{
+//		m_r=r;
+//	}
+//	//获取圆的半径
+//	int getr()
+//	{
+//		return m_r;
+//	}
+//	//设置圆的圆心
+//	void setCenter(point center)
+//	{
+//		C_center.setx(center.getx());
+//		C_center.sety(center.gety());
+//	}
+//	//获取圆的圆心
+//	point getCenter()
+//	{
+//		return C_center;
+//	}
+//	/*int getCenterX()
+//	{
+//		return C_center.getx();
+//	}
+//		int getCenterY()
+//	{
+//		return C_center.gety();
+//	}*/
+//private:
+//	int m_r;
+//	point C_center;
+//};
+void Judge(point &amp;p,circle &amp;c)
+{
+	int x=p.getx()-c.getCenter().getx();
+	int y=p.gety()-c.getCenter().getx();
+	if((x*x+y*y)&gt;c.getr()*c.getr())
+	{
+		cout&lt;&lt;&quot;点在圆外&quot;&lt;&lt;endl;
+	}
+	else if((x*x+y*y)==c.getr()*c.getr())
+	{
+		cout&lt;&lt;&quot;点在圆上&quot;&lt;&lt;endl;
+	}
+	else
+	{
+		cout&lt;&lt;&quot;点在圆内&quot;&lt;&lt;endl;
+	}
+
+}
+
+int main()
+{
+	point p1;
+	p1.setx(20);
+	p1.sety(0);
+	point p2;
+	p2.setx(0);
+	p2.sety(0);
+	circle c1;
+	c1.setr(10);
+	c1.setCenter(p2);
+	cout&lt;&lt;&quot;点1的坐标为(&quot;&lt;&lt;p1.getx()&lt;&lt;&quot;,&quot;&lt;&lt;p1.gety()&lt;&lt;&quot;),&quot;&lt;&lt;endl;
+	//cout&lt;&lt;&quot;点2的坐标为(&quot;&lt;&lt;p2.getx()&lt;&lt;&quot;,&quot;&lt;&lt;p2.gety()&lt;&lt;&quot;),&quot;&lt;&lt;endl;
+	cout&lt;&lt;&quot;圆心的坐标为(&quot;&lt;&lt;c1.getCenter().getx()&lt;&lt;&quot;,&quot;&lt;&lt;c1.getCenter().gety()&lt;&lt;&quot;),&quot;&lt;&lt;endl;
+	Judge(p1,c1);
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>构造函数和析构函数</p>
+<p>系统自动调用</p>
+<p>构造函数的用法 类名（）{}</p>
+<h3 id="1构造函数">1.构造函数</h3>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+
+class Person
+{
+public:
+	Person()
+	{
+		cout&lt;&lt;&quot;Person函数的构造调用&quot;&lt;&lt;endl;//其实创建时候会默认生成这个，只是默认为空
+	}
+	Person(int a)
+	{
+		age=a;
+		cout&lt;&lt;&quot;Person函数的构造调用&quot;&lt;&lt;endl;//其实创建时候会默认生成这个，只是默认为空
+	}
+	Person(const Person &amp;p)
+	{
+		age=p.age;
+	}
+	int age;
+};
+//析构函数
+
+void test01()
+{
+
+	Person p;//栈区的数据，执行完毕后就会释放
+}
+
+int main()
+{
+	//test01();
+	Person P;
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><h4 id="特点">特点</h4>
+<p>1.没有返回值也不写void</p>
+<p>2.函数名称与类名称相同</p>
+<p>3.可以有参数，因此可以发生重载</p>
+<p>4.调用对象时会自动调用构造，无需手动调用，且只会调用一次</p>
+<h4 id="构造函数的分类及调用">构造函数的分类及调用</h4>
+<p>//按照参数分类    无参构造（默认构造函数），有参构造</p>
+<p>//按照类型 普通 拷贝构造函数</p>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+
+class Person
+{
+public:
+	Person()
+	{
+		cout&lt;&lt;&quot;Person函数的构造调用&quot;&lt;&lt;endl;//其实创建时候会默认生成这个，只是默认为空
+	}
+	Person(int a)
+	{
+		age=a;
+		cout&lt;&lt;&quot;Person有参构造的年龄为&quot;&lt;&lt;age&lt;&lt;endl;
+	}
+	Person(const Person &amp;p)//拷贝构造
+	{
+		age=p.age;
+		cout&lt;&lt;&quot;拷贝构造的年龄为&quot;&lt;&lt;p.age&lt;&lt;endl;
+		age=p.age;
+	}
+	~Person()
+	{
+		cout&lt;&lt;&quot;析构函数&quot;&lt;&lt;endl;
+
+	}
+	int age;
+};
+//构造函数的调用
+//括号法 Person p2(10);
+//显示法 Person p2=Person(10);
+//隐式转换法 person p3=p4
+//
+void test01()
+{
+
+	Person p;//默认构造
+	//Person p2(10);//有参构造
+	Person p2=Person(10);//
+	//Person(10);//匿名对象，执行结束后系统会马上释放
+	//Person p3(p2);
+	//Person p3=Person(p2);
+	//注意事项
+	//1.调用默认构造函数不加括号
+	//Person p1();//会被当成一个函数的声明 不会创建对象
+	//cout&lt;&lt;p2.age&lt;&lt;endl;
+	//cout&lt;&lt;p3.age&lt;&lt;endl;
+	//2.不要使用拷贝函数初始化匿名对象
+	Person p3=p2;//编辑器会认为Person(p3)==Person p3;
+
+}
+
+int main()
+{
+	test01();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>拷贝构造函数的调用</p>
+<pre><code>//拷贝构造函数的调用时机
+//1.
+class Person
+{
+public:
+	Person()
+	{
+		cout&lt;&lt;&quot;Person无参构造调用&quot;&lt;&lt;endl;//其实创建时候会默认生成这个，只是默认为空
+	}
+	Person(int a)
+	{
+		age=a;
+		cout&lt;&lt;&quot;Person有参构造的年龄为&quot;&lt;&lt;age&lt;&lt;endl;
+	}
+	Person(const Person &amp;p)//拷贝构造
+	{
+		age=p.age;
+		cout&lt;&lt;&quot;拷贝构造的年龄为&quot;&lt;&lt;p.age&lt;&lt;endl;
+		age=p.age;
+	}
+	~Person()
+	{
+		cout&lt;&lt;&quot;析构函数&quot;&lt;&lt;endl;
+
+	}
+	int age;
+};
+//使用已经创建完毕的对象来初始化一个对象
+
+void test01()
+{
+
+	Person p;
+	Person p2(20);
+	Person p3(p2);
+}
+//值传递的方式给函数传值
+void dowork(Person pmnmn)
+{
+	//Person pmnmn=p
+}
+void test02()
+{
+	Person p(100);
+	dowork(p);
+}
+//值方式返回局部对象
+Person dowork02()
+{
+	Person p1(10);
+	//cout&lt;&lt;(int)&amp;p1&lt;&lt;endl;
+	cout&lt;&lt;&amp;p1&lt;&lt;endl;
+	return p1;
+}
+void test03()
+{
+	//Person p2(100);
+	//Person p4=p2;
+	Person P=dowork02();//==Person P=p1
+	cout&lt;&lt;(int*)&amp;P&lt;&lt;endl;
+
+}
+int main()
+{
+	test03();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>构造函数的调用规则</p>
+<p>1.默认添加三个构造函数</p>
+<p>拷贝构造  （值拷贝）</p>
+<p>2.用户定义了有参构造函数，c++默认继续提供拷贝构造函数</p>
+<p>3.写了拷贝构造函数，不提供其他</p>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+//拷贝构造函数的调用时机
+//1.
+class Person
+{
+public:
+	/*person()
+	{
+		cout&lt;&lt;&quot;person无参构造调用&quot;&lt;&lt;endl;
+	}*/
+	Person(int a)
+	{
+		age=a;
+		cout&lt;&lt;&quot;Person有参构造的年龄为&quot;&lt;&lt;age&lt;&lt;endl;
+	}
+	Person(const Person &amp;p)//拷贝构造
+	{
+		age=p.age;
+		cout&lt;&lt;&quot;拷贝构造的年龄为&quot;&lt;&lt;p.age&lt;&lt;&quot;测试&quot;&lt;&lt;p.num&lt;&lt;endl;
+	}
+	~Person()
+	{
+		cout&lt;&lt;&quot;析构函数&quot;&lt;&lt;endl;
+
+	}
+	int age;
+	int num;
+};
+//使用已经创建完毕的对象来初始化一个对象
+//
+//void test01()
+//{
+//
+//	Person p;
+//	p.age=19;
+//	Person p3(p);
+//	cout&lt;&lt;p3.age&lt;&lt;endl;
+//}
+
+void test02()
+{
+	Person p(10);
+	Person p3(p);
+	p.num=19;
+	cout&lt;&lt;p.num&lt;&lt;endl;
+}
+
+
+int main()
+{
+	test02();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>浅深拷贝</p>
+<p>深拷贝 在堆区重新申请空间，进行拷贝操作</p>
+<p>浅拷贝 简单的赋值拷贝操作</p>
+<p>初始化列表</p>
+<p>初始化属性</p>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+//拷贝构造函数的调用时机
+//1.
+class Person
+{
+public://关键代码部分
+	Person(int a,int b,int c): m_A(a),m_B(b),m_C(c)
+	   {
+
+	   }
+	int m_A;
+	int m_B;
+	int m_C;
+	//Person(int a,int b,int c)//参数构造
+	//{
+	//	m_A=a;
+	//	m_B=b;
+	//	m_C=c;
+	//}
+	/*Person(const Person &amp;p)
+	{
+		m_A=p.m_A;
+		m_B=p.m_B;
+		m_C=p.m_C;
+	}*/
+};
+
+void test01(){
+	Person p1(10,20,30);
+	cout&lt;&lt;p1.m_A&lt;&lt;&quot; &quot;&lt;&lt;endl;
+	cout&lt;&lt;p1.m_B&lt;&lt;&quot; &quot;&lt;&lt;endl;
+	cout&lt;&lt;p1.m_C&lt;&lt;&quot; &quot;&lt;&lt;endl;
+
+}
+int main()
+{
+	test01();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>4.2.7 类对象作为类成员</p>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;string&gt;
+//类对象作为类成员
+class Phone
+{
+public:
+	string m_Pname;
+	Phone(string name):m_Pname(name)
+	{
+		cout&lt;&lt;&quot;Phone&quot;&lt;&lt;endl;
+	}
+	~Phone()
+	{
+
+		cout&lt;&lt;&quot;Phone的析构函数&quot;&lt;&lt;endl;
+	}
+};
+
+
+class Person
+{
+public:
+	string m_Name;
+	Phone m_Phone;
+	//m_Phone=Pname;
+	Person(string name,string Pname):m_Name(name),m_Phone(Pname)
+	{
+		cout&lt;&lt;&quot;Person&quot;&lt;&lt;endl;
+	}
+	~Person()
+	{
+
+		cout&lt;&lt;&quot;Person的析构函数&quot;&lt;&lt;endl;
+	}
+};
+void test01()
+{
+
+	Person p1(&quot;张三&quot;,&quot;苹果&quot;);
+	cout&lt;&lt;p1.m_Name&lt;&lt;&quot; &quot;;
+	cout&lt;&lt;p1.m_Phone.m_Pname&lt;&lt;endl;
+
+}
+int main()
+{
+	test01();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>4.2.8静态成员函数</p>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;string&gt;
+//静态成员
+//所有成员共享一个静态函数
+//静态成员函数只能访问静态成员变量
+class Person
+{
+public:
+	static void func()
+	{
+		m=100;
+		cout&lt;&lt;&quot;静态成员函数的调用func&quot;&lt;&lt;endl;
+	}
+
+	static int m;
+	int b;
+};
+void test01()
+{
+	//通过对象访问
+	Person p;
+	p.func();
+	//通过类名访问
+	Person::func();
+
+}
+int main()
+{
+	test01();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>空指针访问成员函数</p>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;string&gt;
+//
+class Person
+{
+public:
+	void showClassName()
+	{
+		cout&lt;&lt;&quot;This is Person class&quot;&lt;&lt;endl;
+	}
+	void showAge()
+	{
+
+		//this-&gt;m_age
+		if(this==NULL)
+		{
+			return;
+		}
+		cout&lt;&lt;&quot;age=&quot;&lt;&lt;m_age&lt;&lt;endl;
+
+	}
+	int m_age;
+};
+void test01()
+{
+	//通过对象访问
+	Person *p=NULL;
+	p-&gt;showClassName();
+	p-&gt;showAge();
+
+}
+int main()
+{
+	test01();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><h3 id="析构函数">析构函数</h3>
+<p>1.没有返回值也不写void  ~类名（）{}</p>
+<p>2.函数名称与类名称相同，添加~</p>
+<p>3.不可以有参数，不可以发生重载</p>
+<p>4.自动调用</p>
+<p>4.3C++对象模型和this指针</p>
+<p>全局函数做友元</p>
+<pre><code>using namespace std;
+#include &lt;string&gt;
+//全局函数做友元
+class Building
+{
+	friend void Goodday(Building *b1);//添加代码
+public:
+	Building()
+	{
+		m_Sittingroom=&quot;客厅&quot;;
+		m_bedroom=&quot;卧室&quot;;
+	}
+
+public:
+	string m_Sittingroom;
+private:
+	string m_bedroom;
+public:
+};
+void Goodday(Building *b1)
+{
+	cout&lt;&lt;&quot;正在访问&quot;&lt;&lt;b1-&gt;m_Sittingroom&lt;&lt;endl;
+	cout&lt;&lt;&quot;正在访问&quot;&lt;&lt;b1-&gt;m_bedroom&lt;&lt;endl;
+}
+int main()
+{
+	Building b1;
+	Goodday(&amp;b1);
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>类做友元</p>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;string&gt;
+//全局函数做友元
+class Building;
+class Goodday
+{
+public:
+	Goodday();
+	void visit();
+	Building *building;
+};
+//创建Building类
+class Building
+{
+	friend class Goodday;
+public:
+	Building();
+
+public:
+	string m_sittingroom;
+private:
+	string m_bedroom;
+};
+Building::Building()
+{
+	m_sittingroom=&quot;客厅&quot;;
+	m_bedroom=&quot;卧室&quot;;
+}
+Goodday::Goodday()
+{
+	//创建建筑物的对象
+	building=new Building;
+
+}
+void Goodday::visit()
+{
+	cout&lt;&lt;&quot;正在访问&quot;&lt;&lt;building-&gt;m_sittingroom&lt;&lt;endl;
+	cout&lt;&lt;&quot;正在访问&quot;&lt;&lt;building-&gt;m_bedroom&lt;&lt;endl;
+}
+void test01()
+{
+	Goodday gd;
+	gd.visit();
+}
+int main()
+{
+	test01();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><p>成员函数做友元</p>
+<p>加号重载</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">//加号符号重载
+</span><span style="color:#75715e">//1.内置数据类型编译器知道如何操作
+</span><span style="color:#75715e"></span>
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>
+{
+
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+
+	<span style="color:#75715e">//成员函数重载 
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//Person operator+(Person &amp;p)
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//{
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//	Person p3;
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//	p3.m_A=this-&gt;m_A+p.m_A;
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//	p3.m_B=this-&gt;m_B+p.m_B;
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//	return p3;
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> m_A;
+	<span style="color:#66d9ef">int</span> m_B;
+};
+
+<span style="color:#75715e">//全局函数重载
+</span><span style="color:#75715e"></span>Person <span style="color:#66d9ef">operator</span><span style="color:#f92672">+</span>(Person <span style="color:#f92672">&amp;</span>p1,Person <span style="color:#f92672">&amp;</span>p2)
+{
+	Person temp;
+	temp.m_A<span style="color:#f92672">=</span>p1.m_A<span style="color:#f92672">+</span>p2.m_A;
+	temp.m_B<span style="color:#f92672">=</span>p1.m_B<span style="color:#f92672">+</span>p2.m_B;
+	<span style="color:#66d9ef">return</span> temp;
+
+}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test01</span>()
+{
+	Person p1;
+	p1.m_A<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>;
+	p1.m_B<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>;
+	Person p2;
+	p2.m_A<span style="color:#f92672">=</span><span style="color:#ae81ff">120</span>;
+	p2.m_B<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
+	<span style="color:#75715e">//Person p3=p2.operator+(p1);
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//成员函数的本质 Person p3=p1.operator+(p2);
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//全局函数的本质 Person p3=operator+(p1,p2)
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//也可以使用函数重载
+</span><span style="color:#75715e"></span>	Person p3<span style="color:#f92672">=</span>p1<span style="color:#f92672">+</span>p2;
+	cout<span style="color:#f92672">&lt;&lt;</span>p3.m_A<span style="color:#f92672">&lt;&lt;</span>endl;
+	cout<span style="color:#f92672">&lt;&lt;</span>p3.m_B<span style="color:#f92672">&lt;&lt;</span>endl;
+
+}
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+	test01();
+	system (<span style="color:#e6db74">&#34;pause&#34;</span>);
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+}
+
+</code></pre></div><h2 id="4继承">4继承</h2>
+<h3 id="41继承的语法">4.1继承的语法</h3>
+<p>实现代码</p>
+<pre><code>class Base
+{
+	//friend class Java;
+	friend void showbase();
+private:
+	void header()
+	{
+		cout&lt;&lt;&quot;首页 公开课 &quot;&lt;&lt;endl;
+	}
+	void left()
+	{
+		cout&lt;&lt;&quot;Java Python &quot;&lt;&lt;endl;
+	}
+	void footer()
+	{
+		cout&lt;&lt;&quot;站内帮助 联系我们 &quot;&lt;&lt;endl;
+	}
+};
+class Java:public Base//class 子类（派生类） ：继承方式：父类（基类）
+	//继承Base.语法
+{
+public:
+	void content()
+	{
+		cout&lt;&lt;&quot;Java课程&quot;&lt;&lt;endl;
+	}
+
+};
+//void showbase()
+//{
+//	Base b1;
+//	b1.header();
+//	b1.left();
+//	b1.footer();
+//}
+void test01()
+{
+	//showbase();
+	Java ja;
+	ja.content();
+}
+int main()
+{
+	test01();
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre><h3 id="42继承方式">4.2继承方式</h3>
+<p>4.2.1公有继承</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
