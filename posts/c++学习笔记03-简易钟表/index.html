@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="John Doe" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="https://hele8.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+    <link rel="stylesheet" href="https://hele8.github.io.git/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
 
     
     <meta name="twitter:card" content="summary"/>
@@ -20,7 +20,7 @@
 <meta property="og:description" content="代码
 #include &lt;graphics.h&gt;#include &lt;conio.h&gt;#include &lt;math.h&gt; // 用于计算角度#include &lt;time.h&gt; // 用于获取时间#include &lt;stdio.h&gt; #define PI 3.14159265359  // 从系统获取到时、分、秒，然后填入。注意：hour为12进制 void Draw(int hour, int minute, int second) { double a_hour, a_min, a_sec;	// 弧度 	int x_hour, y_hour, x_min, y_min, x_sec, y_sec; // 时分秒的末端位置  a_sec = second*2*PI/60; // 计算秒的角度，其实是6 	a_min = minute*2*PI/60 &#43; a_sec/60; // 计算分的角度，需要累加秒的角度，且除以60 	a_hour = hour*2*PI/12 &#43; a_min/12; // 计算时的角度，注意是12份，且加上分的角度除以12  // 计算时分秒针的终端位置，正弦余弦的计算，圆心位置&#43;半径乘以角度 	x_sec = 320 &#43; (int)(120*sin(a_sec)); y_sec = 240 - (int)(120*cos(a_sec)); x_min = 320 &#43; (int)(100*sin(a_min)); y_min = 240 - (int)(100*cos(a_min)); x_hour = 320 &#43; (int)(80*sin(a_hour)); y_hour = 240 - (int)(80*cos(a_hour)); // 设置每跟针的粗细和颜色，然后从圆点绘制到终点 	setlinestyle(PS_SOLID, 10); setlinecolor(WHITE); line(320, 240, x_hour, y_hour); setlinestyle(PS_SOLID, 8); setlinecolor(GREEN); line(320, 240, x_min, y_min); setlinestyle(PS_SOLID, 4); setlinecolor(RED); line(320, 240, x_sec, y_sec); } // 绘制表盘刻度 //传入秒，以及需要写入的数字 void kedu(int second, int num) { double a_sec;	// 弧度 	a_sec = second*2*PI/60; int x1,y1,x2,y2,x3,y3; x1 = 320 &#43; (int)(100*sin(a_sec));// 计算刻度的起点 	y1 = 240 - (int)(100*cos(a_sec)); x2 = 320 &#43; (int)(120*sin(a_sec));// 计算刻度的终点 	y2 = 240 - (int)(120*cos(a_sec)); x3 = 315 &#43; (int)(130*sin(a_sec));// 计算文字的起始位置，需要将圆心延左上角移动 	y3 = 235 - (int)(130*cos(a_sec)); // 将传进来的数字，进行转换 	TCHAR s[4]; if(second%5 == 0)// 每5个刻度，有一个加粗 	{ setlinestyle(PS_SOLID, 5); _stprintf(s,_T(&#34;%d&#34;), num);// 参看官方文档，有多种方式 	outtextxy(x3, y3, s); } else setlinestyle(PS_SOLID, 2); setlinecolor(WHITE); line(x1,y1,x2,y2); } int main() { //start: 创建绘图窗口 	initgraph(640, 480); circle(320, 240, 2); // 圆心 	circle(320, 240, 60); // 半圈  // 这里设置最外圈 	setlinecolor(YELLOW); setlinestyle(PS_DASHDOTDOT, 8); circle(320, 240, 160); outtextxy(290, 300, _T(&#34;My Clock&#34;)); // 整个区域，都是异或模式，就可以看到线条叠加时的效果，且指针移动的效果 	setwritemode(R2_XORPEN); // 用于标刻度 	int arr[] = {12,1,2,3,4,5,6,7,8,9,10,11}; int index = 0; for(int i = 0; i &lt; 60; &#43;&#43;i) { kedu(i, arr[index]);// 从0开始 	if(i%5 == 0) // 每5个标记一次 	&#43;&#43;index; } SYSTEMTIME ti;// 获取系统时间，24进制时，时针需要减去12 	while(!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003-%E7%AE%80%E6%98%93%E9%92%9F%E8%A1%A8/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://hele8.github.io.git/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003-%E7%AE%80%E6%98%93%E9%92%9F%E8%A1%A8/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-06T11:22:15&#43;08:00" />
 <meta property="article:modified_time" content="2020-05-06T11:22:15&#43;08:00" />
 
@@ -29,7 +29,7 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="https://hele8.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <a href="https://hele8.github.io.git"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
       <h1>何磊</h1>
       <nav class="app-header-menu">
           <a class="app-header-menu-item" href="/">个人主页</a>

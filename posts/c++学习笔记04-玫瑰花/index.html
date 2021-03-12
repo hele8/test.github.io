@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="John Doe" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="https://hele8.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+    <link rel="stylesheet" href="https://hele8.github.io.git/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
 
     
     <meta name="twitter:card" content="summary"/>
@@ -20,7 +20,7 @@
 <meta property="og:description" content="代码
 /****************************************************** * EasyX Library for C&#43;&#43; (Ver:20200902) * https://easyx.cn * * graphics.h *	Based on easyx.h and retaining several old API. ******************************************************/ #pragma once  #include &lt;easyx.h&gt; // 兼容 initgraph 绘图模式的宏定义（无实际意义） #define DETECT	0 #define VGA	0 #define	VGALO	0 #define VGAMED	0 #define VGAHI	0 #define CGA	0 #define	CGAC0	0 #define	CGAC1	0 #define CGAC2	0 #define CGAC3	0 #define CGAHI	0 #define EGA	0 #define EGALO	0 #define	EGAHI	0  // 绘图窗口初始化参数（已废弃，请使用新的宏定义） #define SHOWCONSOLE	1	// 创建图形窗口时，保留控制台的显示 #define NOCLOSE	2	// 没有关闭功能 #define NOMINIMIZE	4	// 没有最小化功能  // BGI 格式的初始化图形设备，默认 640 x 480 HWND initgraph(int* gdriver, int* gmode, char* path); void bar(int left, int top, int right, int bottom);	// 画无边框填充矩形 void bar3d(int left, int top, int right, int bottom, int depth, bool topflag);	// 画有边框三维填充矩形  void drawpoly(int numpoints, const int *polypoints);	// 画多边形 void fillpoly(int numpoints, const int *polypoints);	// 画填充的多边形  int getmaxx();	// 获取最大的宽度值 int getmaxy();	// 获取最大的高度值  COLORREF getcolor();	// 获取当前绘图前景色 void setcolor(COLORREF color);	// 设置当前绘图前景色  void setwritemode(int mode);	// 设置前景的二元光栅操作模式  /////////////////////////////////////////////////////////////////////////////////// // 以下函数仅为兼容早期 EasyX 的接口，不建议使用。请使用相关新函数替换。 //  #if _MSC_VER &gt; 1200 	#define _EASYX_DEPRECATE(_NewFunc) __declspec(deprecated(&#34;This function is deprecated." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hele8.github.io/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004-%E7%8E%AB%E7%91%B0%E8%8A%B1/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://hele8.github.io.git/posts/c&#43;&#43;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004-%E7%8E%AB%E7%91%B0%E8%8A%B1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-04T21:21:11&#43;08:00" />
 <meta property="article:modified_time" content="2020-05-04T21:21:11&#43;08:00" />
 
@@ -29,7 +29,7 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="https://hele8.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <a href="https://hele8.github.io.git"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
       <h1>何磊</h1>
       <nav class="app-header-menu">
           <a class="app-header-menu-item" href="/">个人主页</a>
